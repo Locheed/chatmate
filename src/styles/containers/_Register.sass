@@ -1,0 +1,36 @@
+.register-container
+  background: $container-bg-color
+  border-top: 20px solid $color-register-topbar
+  box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.25)
+  border-radius: 5px
+  width: 300px
+  height: 510px
+  display: flex
+  flex-direction: column
+  margin-top: 30px
+  align-items: center
+  .register-button
+    display: block
+    font-weight: 600
+    color: #FFF
+    margin:
+      top: 20px
+      left: auto
+      right: auto
+    padding: 10px
+    width: 120px
+    border-radius: 4px
+    border: 1px solid transparent
+    background: $color-register-button
+    &:hover
+      background: $color-register-button-hover
+  .login-link
+    color: $color-register-button
+    text-decoration: none
+    margin-top: 20px
+    display: flex
+    justify-content: center
+    &:hover
+      color: $color-register-button-hover
+  
+    

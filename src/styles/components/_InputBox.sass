@@ -1,0 +1,58 @@
+@import '../base/_vars'
+
+.input-container
+  display: flex
+  position: relative
+  flex-direction: column
+  width: 100%
+  justify-content: center
+  margin-bottom: 8%
+  margin-top: 14px
+  min-height: 50px
+  max-height: 150px
+  .character-limit
+    color: $color-danger
+    font-weight: 600
+    font-style: italic
+    position: absolute
+    top: -15px
+  .send-form
+    display: flex
+    height: auto
+    width: inherit
+    justify-content: center
+    textarea[type=text]
+      overflow: hidden
+      resize: none
+      max-height: 150px
+      max-width: 70%
+      width: 100%
+      background: transparent
+      color: #FFF
+      border:
+        top: 0
+        right: 0
+        left: 0
+        width: 3px
+      padding: 5px
+      outline: none
+      transition: all 0.30s ease-in-out
+    .send-btn
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      padding: 3px
+      width: 35px
+      height: 35px
+      box-shadow: 0px 17px 50px 0px rgba(0, 0, 0, 0.19),0px 12px 15px 0px rgba(0, 0, 0, 0.24)
+      &:focus
+        outline: none
+
+    
+    
+
+
+
+      
+      
+      

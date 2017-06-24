@@ -1,0 +1,90 @@
+@import '../base/_vars'
+
+.register-field
+  position: relative
+  .form-group
+    display: flex
+    flex-direction: column
+    margin:
+      top: 20px
+      right: 20px
+      left: 20px
+    color: #FFF
+    input[type=text]
+      padding: 8px
+      border-radius: 5px
+      box-shadow: inset 0 0 6px
+      border: 1px solid rgba(256, 256, 256, .8)
+      &:focus
+      outline-color: $color-register-topbar !important
+  .error-field
+    color: #d9534f
+    margin-top: 3px
+  .error
+    border: 2px solid #d9534F !important
+  
+  // Tooltips for registering fields
+  .info-tip
+    position: absolute
+    top: 25px
+    right: -10px
+    text-align: center
+    background-color: $color-register-topbar
+    border-radius: 50%
+    width: 23px
+    height: 23px
+    font-size: 14px
+    line-height: 26px
+    cursor: help
+    &:before
+      content: '?'
+      font-weight: bold
+      color: #fff
+    &:hover p, &:hover ul
+      display: block
+      transform-origin: 100% 0%
+      animation: fadeIn .3s ease-in-out
+    p, ul   // The tooltip
+      display: none
+      z-index: 1
+      text-align: left
+      background-color: #1E2021
+      padding: 20px
+      width: 270px
+      position: absolute
+      border-radius: 3px
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2)
+      right: -4px
+      color: #FFF
+      font-size: 13px
+      line-height: 1.4
+      &:before // The pointer of the tooltip
+        position: absolute
+        content: ''
+        width: 0
+        height: 0
+        border: 6px solid transparent
+        border-bottom-color: #1E2021
+        right: 10px
+        top: -12px
+      &:after // Prevents the tooltip from being hidden
+        width: 100%
+        height: 40px
+        content: ''
+        position: absolute
+        top: -40px
+        left: 0
+    a
+      color: $color-register-topbar
+      cursor: pointer
+      &:hover
+        color: $color-register-button-hover
+  @keyframes fadeIn
+    0%
+      opacity: 0
+    100%
+      opacity: 100%
+
+      
+  
+    

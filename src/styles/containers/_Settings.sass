@@ -1,0 +1,57 @@
+.settings-container
+  position: absolute
+  right: 0
+  z-index: 1
+  transition: all .300s ease-in-out
+  visibility: hidden
+  box-shadow: -1px 0 2px 2px rgba(0, 0, 0, .3)
+  width: 50%
+  height: 100vh
+  @include bp-med
+    right: 25%
+    top: 25%
+    height: 470px
+    width: 500px
+    box-shadow: 0px 17px 50px 0px rgba(0, 0, 0, 0.19),0px 12px 15px 0px rgba(0, 0, 0, 0.24)
+    border-radius: 10px
+    transition: all .200s ease-in
+  .times-container
+    display: none
+    justify-content: flex-end
+    @include bp-med
+      display: flex
+    .times
+      font-size: 2.2rem
+      font-weight: 600
+      display: none
+      margin-right: 10px
+      color: $color-danger
+      text-shadow: 1px 1px rgba(0, 0, 0, 0.29)
+      cursor: pointer
+      @include bp-med
+        display: block
+      &:hover
+        color: darken($color-danger, 5%)
+    
+
+
+  .settings-divider
+    margin: 45px 0 20px 0
+    @include bp-med
+      margin-top: 5px
+
+.settings-container-open
+  visibility: visible
+  transform: translateX(0px)
+  @include bp-med
+    transform-origin: 50% 100%
+    opacity: 1
+.settings-container-closed
+  transform: translateX(300px)
+  @include bp-med
+    transform: translateX(0px)
+    opacity: 0
+  
+  
+  
+  

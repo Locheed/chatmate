@@ -1,0 +1,33 @@
+@import '../base/_vars'
+@font-face 
+  font-family: MoskThin  
+  src: url('../assets/fonts/MoskThin100.ttf') format('truetype')
+
+
+*, *:before, *:after 
+  box-sizing: border-box
+body
+  @import url(https://fonts.googleapis.com/css?family=Montserrat|Roboto:300,400)
+  background-color: #222222
+  background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px
+  overflow-y: hidden
+  font-family: 'Montserrat', serif
+  
+
+.container, .main-area
+  background-color: $container-bg-color
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  overflow: hidden
+  margin: 0 auto
+  height: 100vh
+  width: 100vw
+  max-width: 1170px
+.container
+  @include bp-med
+    flex-direction: row
+    justify-content: center
+
+  

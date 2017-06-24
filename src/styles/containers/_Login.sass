@@ -1,0 +1,51 @@
+.login-container
+  background: $container-bg-color
+  border-top: 20px solid $color-register-topbar
+  box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.25)
+  border-radius: 5px
+  width: 300px
+  height: 510px
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-top: 30px
+    
+  input[type=password]
+    box-shadow: inset 0 0 6px
+    border-radius: 5px
+    border: 1px solid rgba(256, 256, 256, .8)
+    padding: 8px
+    &:focus
+      outline-color: $color-register-topbar !important
+  .login-button    
+    display: block
+    font-weight: 600
+    color: #FFF
+    margin:
+      top: 20px
+      left: auto
+      right: auto
+    padding: 10px
+    width: 120px
+    border-radius: 4px
+    border: 1px solid transparent
+    background: $color-register-button
+    &:hover
+      background: $color-register-button-hover
+  .signup-link
+    color: $color-register-button
+    text-decoration: none
+    margin-top: 20px
+    display: flex
+    justify-content: center
+    &:hover
+      color: $color-register-button-hover
+  .success-msg
+    margin: 40px 40px 10px 40px
+    text-align: center
+    color: $color-register-topbar
+  .check
+    margin-top: 0
+    text-align: center
+    color: $color-register-topbar
+
