@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import Gravatar from 'react-gravatar';
 import Remarkable from 'remarkable';
 import hljs from 'highlightjs';
+import {emojify} from 'react-emojione';
 import YouTubeEmbed from './YouTubeEmbed';
 
 // ************** Remarkable config block ***************
@@ -51,7 +52,10 @@ const Message = props => {
       hashtag: val => `https://twitter.com/hashtag/${val.substr(1)}?src=hash`,
     },
   };
-  const mdMessage = md.render(message); // Convert text to markdown if needed
+
+  const emojied = emojify(message, { output: 'unicode' }); // Convert pure text to emojies
+  const mdMessage = md.render(emojied); // Convert emojied text to markdown
+  
 
   const regEx = /[^]*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
   return (

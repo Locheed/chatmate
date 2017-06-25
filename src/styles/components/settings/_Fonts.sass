@@ -3,6 +3,7 @@
   justify-content: center
   margin-top: 10px
   .fonts
+    position: relative
     display: flex
     justify-content: center
     border: 2px solid rgba(255, 255, 255, 0.4)
@@ -11,14 +12,15 @@
     width: 150px
     box-shadow: inset 0 0px 8px rgba(255, 255, 255, .5)
     .fonts-overlay
-      position: relative
+      position: absolute
       height: 30px
       min-width: 90px
-      top: -17%
-      left: -5%
+      top: -20px
+      //top: -17%
+      //left: -5%
       .fonts-label
-        position: absolute
-        top: -10%
+        //position: absolute
+        //top: -10%
         left: 0%
         width: 100px
         color: #FFF
@@ -29,7 +31,7 @@
         padding: 8px
         margin: 0
     .form
-      position: absolute
+      //position: absolute
       color: #FFF
       font-size: .8rem
       font-style: italic

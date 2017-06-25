@@ -1,5 +1,6 @@
 /* eslint-disable prop-types */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -59,5 +60,27 @@ module.exports = {
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new FaviconsWebpackPlugin({
+      logo: './src/assets/icons/favicon.png',
+      prefix: 'icons-[hash]/',
+      emitStats: false,
+      statsFilename: 'iconstats-[hash].json',
+      persistentCache: true,
+      inject: true,
+      background: '#fff',
+      title: 'Chatmate',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: true,
+        twitter: false,
+        yandex: false,
+        windows: false,
+      },
+    }),
   ],
 };

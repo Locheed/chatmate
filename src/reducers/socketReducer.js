@@ -1,5 +1,5 @@
 function socketReducer(
-  state = [{ socket: window.io('http://localhost:3002') }],
+  state = [{ socket: window.io() }],
   action) {
   switch (action.type) {
     case 'SOCKET_JOIN':

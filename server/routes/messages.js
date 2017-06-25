@@ -4,7 +4,7 @@ const md5 = require('md5');
 const SECRETS = require('../config/secrets');
 
 
-if (process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV !== 'production') {
   mongoose.connect('mongodb://localhost/chatmate');
 } else mongoose.connect(SECRETS.mongoSecret);
 

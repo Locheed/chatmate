@@ -30,6 +30,9 @@ export default class Login extends React.Component {
 
   render() {
     const { successMsg } = this.props;
+    const successStyle = {
+      height: '650px',
+    };
     return (
       <div className="login-container">
         <img src={logo} className="logo" alt="Chatmate" title="Chatmate" />

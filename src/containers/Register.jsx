@@ -72,7 +72,7 @@ export default class Register extends React.Component {
           <RegisterField
             errorMsg={password !== undefined ? password.msg : null}
             onChange={this.onChange}
-            type="text"
+            type="password"
             value={this.state.password}
             htmlFor="password"
             label="Password:"
@@ -89,7 +89,7 @@ export default class Register extends React.Component {
           <RegisterField
             errorMsg={password2 !== undefined ? password2.msg : null}
             onChange={this.onChange}
-            type="text"
+            type="password"
             value={this.state.password2}
             htmlFor="password2"
             label="Password Confirmation:"

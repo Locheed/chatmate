@@ -1,12 +1,12 @@
 {
-  "name": "chitnchat",
+  "name": "Chatmate",
   "version": "1.0.0",
   "description": "Responsive chat application concept with React",
   "main": "index.js",
   "scripts": {
     "start": "npm run build",
     "build": "set NODE_ENV=development&& nodemon server.js",
-    "build:server": "set NODE_ENV=production&& nodemon server.js",
+    "build:only": "set NODE_ENV=production&& webpack -p --config=webpack.config.prod --colors --progress",
     "build:prod": "set NODE_ENV=production&& webpack -p --config=webpack.config.prod --colors --progress && nodemon server.js"
   },
   "author": "Mika Vesasto",
@@ -28,6 +28,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "favicons-webpack-plugin": "0.0.7",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.3",
@@ -66,6 +67,7 @@
     "react": "^15.5.4",
     "react-alert": "^2.1.1",
     "react-dom": "^15.5.4",
+    "react-emojione": "^3.1.10",
     "react-fontawesome": "^1.6.1",
     "react-ga": "^2.2.0",
     "react-gravatar": "^2.6.3",

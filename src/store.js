@@ -5,9 +5,8 @@ import createSocketIoMiddleware from 'redux-socket.io';
 import io from 'socket.io-client';
 import rootReducer from './reducers/rootReducer';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const socket = io('http://localhost:3002');
+let composeEnhancers = compose;
+const socket = io();
 
 const socketIoMiddleware = createSocketIoMiddleware(socket, 'server/');
 
@@ -20,6 +19,7 @@ const middleware = [thunk, socketIoMiddleware];
 if (process.env.NODE_ENV !== 'production') {
   const { logger } = require('redux-logger'); // eslint-disable-line global-require
   middleware.push(logger);
+  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 }
 
 const store = createStore(
