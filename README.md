@@ -7,6 +7,7 @@
 * [About this project](#about)
 * [Features in this project](#features)
 * [Tools used with this project](#tools)
+* [Todos](#todos)
 * [Contact author](#contact)
 
 # <a name="about"></a>About this project
@@ -73,7 +74,11 @@ Chat supports ***markdown, emoticons, youtube video embeds and Twitter hashtags*
 #### Other
 * Google Analytics
 
-
+## <a name="todos"></a>Todos
+* Add unit testing (Mocha, Enzyme... )
+* Add infinite loading
+* Embed images to chat messages
+* Use Socket.io to deliver messages instead of a rest api.
 
 # <a name="contact"></a>Contact author
 * "Mika Vesasto" <locheed@gmail.com>
