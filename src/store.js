@@ -1,5 +1,4 @@
 import { applyMiddleware, createStore, compose } from 'redux';
-//import { logger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import createSocketIoMiddleware from 'redux-socket.io';
 import io from 'socket.io-client';

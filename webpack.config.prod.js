@@ -3,13 +3,30 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+// the path(s) that should be cleaned
+const pathsToClean = [
+  'dist/*.*',
+];
+
+// the clean options to use
+const cleanOptions = {
+  verbose: true,
+  dry: false,
+};
 
 module.exports = {
   devtool: 'cheap-module-source-map',
-  entry: ['./src/index.jsx'],
+  entry: {
+    main: ['./src/index.jsx'],
+    vendor: './src/assets/js/autotrack.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name]-[chunkhash].js',
+    chunkFilename: '[name]-[chunkhash].js',
     publicPath: '/',
   },
   module: {
@@ -57,9 +74,16 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
+    new CleanWebpackPlugin(pathsToClean, cleanOptions),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: '[name]-[chunkhash].js',
+      minChunks: Infinity,
+    }),
+    new WebpackMd5Hash(),
     new FaviconsWebpackPlugin({
       logo: './src/assets/icons/favicon.png',
       prefix: 'icons-[hash]/',

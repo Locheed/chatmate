@@ -31,10 +31,6 @@ export default class Register extends React.Component {
 
   render() {
     const { username, email, password, password2 } = this.props.errors;
-    const infoTip = {
-      email: `You use your email for login. It is recommended to use same email, 
-            that you use in Gravatar-service. We use Gravatar images. Email cannot be changed afterwards.`,
-    };
     return (
       <div className="register-container">
         <form onSubmit={this.onSubmit}>

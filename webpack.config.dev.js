@@ -4,12 +4,17 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
+
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: ['react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true', './src/index.jsx'],
+  entry: {
+    main: ['react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true', './src/index.jsx'],
+    vendor: './src/assets/js/autotrack.js', // Include Google Analytics autotrack to vendor bundle
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
+    chunkFilename: '[name].js',
     publicPath: '/',
   },
   module: {
@@ -63,6 +68,11 @@ module.exports = {
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'assets/js/vendor.bundle.js',
+      minChunks: Infinity,
+    }),
     new FaviconsWebpackPlugin({
       logo: './src/assets/icons/favicon.png',
       prefix: 'icons-[hash]/',

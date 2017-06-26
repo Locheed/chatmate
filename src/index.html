@@ -16,7 +16,19 @@
          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script defer src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script async src="https://www.google-analytics.com/analytics.js"></script>
+        <script>
+            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+            ga('create', 'UA-97419602-2', 'auto');
+
+            // Replace the following lines with the plugins you want to use.
+            ga('require', 'eventTracker');
+            ga('require', 'outboundLinkTracker');
+            ga('require', 'urlChangeTracker');
+
+            ga('send', 'pageview');
+        </script>
     </head>
     <body>
         <div id="root"></div>

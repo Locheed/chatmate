@@ -1,11 +1,9 @@
 import React from 'react';
-import { Router, Route, Redirect } from 'react-router-dom';
+import { Router, Route, Redirect, BrowserRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import 'normalize.css';
-import createHistory from 'history/createBrowserHistory';
-import ReactGA from 'react-ga';
 
 import * as messagesAction from '../actions/messagesAction';
 import * as uiAction from '../actions/uiAction';
@@ -23,13 +21,6 @@ import ChatBox from '../components/ChatBox';
 import InputBox from '../components/InputBox';
 
 
-const history = createHistory();
-history.listen((location, action) => {
-  ReactGA.set({ page: location.pathname });
-  ReactGA.pageview(location.pathname);
-});
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -41,10 +32,8 @@ class App extends React.Component {
       panelOpen: false,
       userPanelOpen: false,
     };
-    ReactGA.initialize('UA-97419606-2');
-    ReactGA.pageview(location.pathname);
   }
- 
+
   componentDidMount() {
     this.props.loginCheck();
   }
@@ -65,7 +54,7 @@ class App extends React.Component {
   render() {
     const { user, isLoggedIn, successMsg } = this.props.uiControl;
     return (
-      <Router history={history}>
+      <BrowserRouter>
         <div className="container">       
           <Route
             path="/signup"
@@ -130,7 +119,7 @@ class App extends React.Component {
             ))}
           />
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
