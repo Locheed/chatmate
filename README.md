@@ -79,6 +79,7 @@ Chat supports ***markdown, emoticons, youtube video embeds and Twitter hashtags*
 * Add infinite loading
 * Embed images to chat messages
 * Use Socket.io to deliver messages instead of a rest api.
+* Possibly porting to Electron and Cordova.
 
 # <a name="contact"></a>Contact author
 * "Mika Vesasto" <locheed@gmail.com>
