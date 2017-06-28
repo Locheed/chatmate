@@ -13,7 +13,7 @@ const UserList = (props) => {
         {props.people.map(people => (
           <UserBlock key={people.name} name={people.name} email={people.email} />
         ))}
-      </div>;
+      </div>
     </div>
   );
 };
