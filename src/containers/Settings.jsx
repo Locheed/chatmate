@@ -74,24 +74,24 @@ export default class Settings extends React.Component {
           >
             &times;
           </span>
-        </div>;
+        </div>
 
         <hr className={`settings-divider ${themeSelected}`} />
         <UserProfile
           user={user}
           handleLogOut={this.handleLogOut}
           handleEditClick={this.handleEditClick}
-        />;
+        />
 
         <Fonts
           themeSelected={themeSelected}
           fontSize={fontSize}
           handleFontSize={this.handleFontSize}
-        />;
+        />
         <Theme
           themeSelected={themeSelected}
           handleThemeChange={this.handleThemeChange}
-        />;
+        />
       </div>
     );
   }
