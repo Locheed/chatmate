@@ -55,7 +55,7 @@ class App extends React.Component {
     const { user, isLoggedIn, successMsg } = this.props.uiControl;
     return (
       <BrowserRouter>
-        <div className="container">       
+        <div className="container">
           <Route
             path="/signup"
             render={() => (
@@ -139,8 +139,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispachToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ ...messagesAction, ...uiAction, ...socketAction }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispachToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
